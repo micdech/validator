@@ -323,10 +323,10 @@ class Validator {
 	public function addRules($rules){
 
 		foreach($rules as $k => $v){
-			$this->rules[$k] = $v;
+			$newRules[$k] = $v;
 		}
 
-		return $this->rules;
+		return array_merge($this->rules, $newRules);
 
 	}
 
