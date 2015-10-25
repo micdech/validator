@@ -39,7 +39,7 @@ class Validator {
 
 	public function __construct(){
 		$this->messages = $this->messages();
-		$this->rules = array();
+		$this->rules = $this->rules();
 		$this->classes = "error";
 	}
 
@@ -317,16 +317,16 @@ class Validator {
 			'phone'			=> 'required|phone'
 		);
 
-		return array_merge($this->rules, $rules);
+		return $rules;
 	}
 
 	public function addRules($rules){
 
 		foreach($rules as $k => $v){
-			$newRules[$k] = $v;
+			$this->rules[$k] = $v;
 		}
 
-		return array_merge($this->rules, $newRules);
+		return $this->rules;
 
 	}
 
