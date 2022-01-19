@@ -30,7 +30,7 @@
 
 class Validator {
 
-	private $fields;
+	private $fields_old;
 	private $errors;
 	private $messages;
 	private $data;
