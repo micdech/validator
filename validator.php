@@ -114,7 +114,7 @@ class Validator {
             return true;
         }
 
-        return strlen(trim($input)) == (int) $length ? true : false;
+        return in_array(strlen(trim($input)), array_map('intval', $length)) ? true : false;
     }
 
     public function greaterthan($input = null, $min = 0) {
